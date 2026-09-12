@@ -1,0 +1,27 @@
+START
+
+DISPLAY "Enter your weekly income"
+INPUT weeklyIncome
+
+IF weeklyIncome is less than 0
+    DISPLAY "Income must be zero or higher"
+    STOP
+END IF
+
+IF weeklyIncome is less than 500
+    SET taxRate to 0.10
+ELSE IF weeklyIncome is less than 1500
+    SET taxRate to 0.15
+ELSE IF weeklyIncome is less than 2500
+    SET taxRate to 0.20
+ELSE
+    SET taxRate to 0.30
+END IF
+
+SET weeklyWithholding to weeklyIncome multiplied by taxRate
+
+DISPLAY weeklyIncome
+DISPLAY taxRate
+DISPLAY weeklyWithholding
+
+END
